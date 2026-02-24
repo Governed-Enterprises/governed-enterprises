@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { DIVISIONS, type DivisionCategory } from "@/lib/constants";
 import DivisionCard from "@/components/DivisionCard";
+
+type Filter = "ALL" | "LIVE" | "COMING SOON";
+
+const FILTERS: Filter[] = ["ALL", "LIVE", "COMING SOON"];
 
 const CATEGORY_ORDER: DivisionCategory[] = [
   "CULTURE",
@@ -21,7 +26,15 @@ function groupByCategory() {
   return groups;
 }
 
+function isHighlighted(status: string, filter: Filter): boolean {
+  if (filter === "ALL") return true;
+  if (filter === "LIVE") return status === "LIVE";
+  // "COMING SOON" filter shows both COMING SOON and IN DEVELOPMENT
+  return status === "COMING SOON" || status === "IN DEVELOPMENT";
+}
+
 export default function CommandCenter() {
+  const [activeFilter, setActiveFilter] = useState<Filter>("ALL");
   const groups = groupByCategory();
 
   return (
@@ -50,6 +63,32 @@ export default function CommandCenter() {
         >
           The Divisions
         </motion.p>
+
+        {/* Filter bar */}
+        <div className="mt-8 flex items-center justify-center gap-6" role="tablist">
+          {FILTERS.map((filter) => (
+            <button
+              key={filter}
+              role="tab"
+              aria-selected={activeFilter === filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`relative text-xs uppercase tracking-wide pb-1.5 transition-colors duration-200 cursor-pointer ${
+                activeFilter === filter
+                  ? "text-ge-gold"
+                  : "text-ge-dim hover:text-ge-secondary"
+              }`}
+            >
+              {filter}
+              {activeFilter === filter && (
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-ge-gold"
+                  layoutId="filter-underline"
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
 
         {/* Category groups */}
         <div className="mt-12 space-y-12">
@@ -80,7 +119,14 @@ export default function CommandCenter() {
                       transition={{ duration: 0.4, delay: i * 0.1 }}
                       viewport={{ once: true, margin: "-30px" }}
                     >
-                      <DivisionCard division={division} />
+                      <motion.div
+                        animate={{
+                          opacity: isHighlighted(division.status, activeFilter) ? 1 : 0.3,
+                        }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        <DivisionCard division={division} />
+                      </motion.div>
                     </motion.div>
                   ))}
                 </div>
