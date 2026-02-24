@@ -2,6 +2,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import TopBar from "@/components/TopBar";
 import HookSection from "@/components/HookSection";
 import OriginStory from "@/components/OriginStory";
+import CommandCenter from "@/components/CommandCenter";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
       <main>
         <HookSection />
         <OriginStory />
-        {/* <CommandCenter /> — Phase 2 */}
+        <CommandCenter />
       </main>
       <Footer />
     </>
