@@ -5,7 +5,7 @@ import { SITE_CONTENT } from "@/lib/constants";
 
 export default function OriginStory() {
   return (
-    <section className="relative py-32 px-6 bg-slate">
+    <section id="origin-story" className="relative py-32 px-6 bg-slate">
       <div className="max-w-3xl mx-auto">
         <motion.h2
           className="text-3xl md:text-5xl font-bold text-ivory mb-12"
