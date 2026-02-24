@@ -25,11 +25,11 @@ const Ticker = memo(function Ticker() {
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
-          className="text-ge-secondary text-xs sm:text-sm tracking-wide whitespace-nowrap overflow-hidden text-ellipsis"
-          initial={{ opacity: 0, y: 8 }}
+          className="text-ge-secondary text-xs sm:text-sm tracking-wide whitespace-nowrap overflow-hidden text-ellipsis will-change-transform"
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
           role="status"
         >
           {currentItem.icon} {currentItem.text}
@@ -41,9 +41,12 @@ const Ticker = memo(function Ticker() {
 
 export default function TopBar() {
   return (
-    <header
+    <motion.header
       role="banner"
-      className="fixed top-0 left-0 right-0 z-50 h-9 bg-[#0a0a0a] border-b border-ge-gold/20"
+      className="fixed top-0 left-0 right-0 z-50 h-9 bg-[#0a0a0a] border-b border-ge-gold/20 will-change-transform"
+      initial={{ y: -36 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div className="h-full flex items-center justify-between px-4 sm:px-5 md:px-6 gap-4">
         <span className="text-ge-gold font-semibold text-sm tracking-wide shrink-0">
@@ -53,6 +56,6 @@ export default function TopBar() {
 
         <Ticker />
       </div>
-    </header>
+    </motion.header>
   );
 }

@@ -18,9 +18,9 @@ const ICON_MAP: Record<string, string> = {
 
 function StatusBadge({ status }: { status: Division["status"] }) {
   const config = {
-    LIVE: { color: "#4ade80", label: "Live", showDot: true },
-    "IN DEVELOPMENT": { color: "#fbbf24", label: "In Dev", showDot: true },
-    "COMING SOON": { color: "#666666", label: "Soon", showDot: false },
+    LIVE: { color: "#4ade80", label: "Live", dotClass: "animate-status-pulse" },
+    "IN DEVELOPMENT": { color: "#fbbf24", label: "In Dev", dotClass: "animate-status-pulse-slow" },
+    "COMING SOON": { color: "#666666", label: "Soon", dotClass: "" },
   }[status];
 
   return (
@@ -31,9 +31,9 @@ function StatusBadge({ status }: { status: Division["status"] }) {
         border: `1px solid ${config.color}33`,
       }}
     >
-      {config.showDot && (
+      {config.dotClass && (
         <span
-          className="w-1.5 h-1.5 rounded-full animate-pulse"
+          className={`w-1.5 h-1.5 rounded-full will-change-transform ${config.dotClass}`}
           style={{ backgroundColor: config.color }}
         />
       )}
@@ -91,7 +91,7 @@ export default function DivisionCard({ division }: { division: Division }) {
 
   return (
     <motion.div
-      className="relative rounded-xl p-5 sm:p-6 min-h-[160px] sm:min-h-[180px] cursor-pointer flex flex-col group"
+      className="relative rounded-xl p-5 sm:p-6 min-h-[160px] sm:min-h-[180px] cursor-pointer flex flex-col group will-change-transform"
       style={{
         backgroundColor: "#1a1a1a",
         border: "1px solid #2a2a2a",
@@ -100,8 +100,9 @@ export default function DivisionCard({ division }: { division: Division }) {
         y: -4,
         borderColor: "rgba(201,168,76,0.4)",
         boxShadow: "0 4px 20px rgba(201,168,76,0.15)",
+        transition: { duration: 0.2, ease: "easeOut" },
       }}
-      transition={{ duration: 0.25 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       onClick={handleClick}
       onDoubleClick={handleNavigate}
       role="article"

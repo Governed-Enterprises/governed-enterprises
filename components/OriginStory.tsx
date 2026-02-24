@@ -37,13 +37,13 @@ export default function OriginStory() {
           {paragraphs.map((paragraph, i) => (
             <motion.p
               key={i}
-              className={`text-base md:text-lg leading-relaxed ${
+              className={`text-base md:text-lg leading-relaxed will-change-transform ${
                 i < lastIndex ? "mb-6 sm:mb-8 text-ge-primary" : "text-ge-gold"
               }`}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: true, amount: 0.2 }}
             >
               {paragraph}
             </motion.p>

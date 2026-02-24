@@ -9,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Governed Enterprises namespaced palette
         "ge-background": "#0f0f0f",
         "ge-background-alt": "#161616",
         "ge-gold": "#c9a84c",
@@ -21,7 +20,6 @@ const config: Config = {
         "ge-status-live": "#4ade80",
         "ge-status-dev": "#fbbf24",
         "ge-status-soon": "#666666",
-        // Legacy aliases for existing components
         obsidian: "#0f0f0f",
         ivory: "#f5f5f5",
         gold: "#c9a84c",
@@ -41,6 +39,8 @@ const config: Config = {
         "ticker-scroll": "ticker-scroll 30s linear infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "pulse-gentle": "pulse-gentle 2s ease-in-out infinite",
+        "status-pulse": "status-pulse 2s ease-in-out infinite",
+        "status-pulse-slow": "status-pulse-slow 3s ease-in-out infinite",
       },
       keyframes: {
         "ticker-scroll": {
@@ -54,6 +54,14 @@ const config: Config = {
         "pulse-gentle": {
           "0%, 100%": { opacity: "0.4", transform: "translateY(0)" },
           "50%": { opacity: "1", transform: "translateY(6px)" },
+        },
+        "status-pulse": {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.5)", opacity: "0.5" },
+        },
+        "status-pulse-slow": {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.5)", opacity: "0.5" },
         },
       },
     },

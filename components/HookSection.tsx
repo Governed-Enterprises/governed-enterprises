@@ -89,10 +89,10 @@ export default function HookSection() {
       <div className="relative z-10 text-center px-5 sm:px-6 max-w-4xl">
         {/* Logo */}
         <motion.div
-          className="flex justify-center mb-6 sm:mb-8"
+          className="flex justify-center mb-6 sm:mb-8 will-change-transform"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           style={{
             filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
           }}
@@ -102,10 +102,10 @@ export default function HookSection() {
 
         {/* Hook statement */}
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.02em] text-ge-primary"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.02em] text-ge-primary will-change-transform"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
         >
           {SITE_CONTENT.hookStatement}
         </motion.h1>
@@ -115,7 +115,7 @@ export default function HookSection() {
           className="mt-3 sm:mt-4 text-xs sm:text-sm tracking-[0.15em] uppercase text-ge-gold-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
+          transition={{ duration: 0.5, delay: 1.1 }}
         >
           {SITE_CONTENT.hookSubtext}
         </motion.p>
@@ -123,11 +123,11 @@ export default function HookSection() {
 
       {/* Scroll-down arrow */}
       <motion.button
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 cursor-pointer p-2 z-10"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 cursor-pointer p-2 z-10 will-change-transform"
         onClick={scrollToOrigin}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 2 }}
+        transition={{ duration: 0.4, delay: 1.6 }}
         aria-label="Scroll to origin story"
       >
         <ChevronDown className="w-6 h-6 text-ge-gold/60 animate-pulse-gentle" />
