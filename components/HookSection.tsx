@@ -43,7 +43,7 @@ function GEEmblem() {
 
 export default function HookSection() {
   const scrollToOrigin = () => {
-    document.getElementById("origin-story")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("origin")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
