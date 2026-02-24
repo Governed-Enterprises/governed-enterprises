@@ -16,6 +16,9 @@ export default function OriginStory() {
       {/* Gradient blend from previous section */}
       <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-ge-background to-transparent" />
 
+      {/* Bottom gradient blend into CommandCenter */}
+      <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-ge-background" />
+
       <div className="py-16 md:py-24 px-6">
         <div className="max-w-[640px] mx-auto">
           {/* Thin gold divider line */}

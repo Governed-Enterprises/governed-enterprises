@@ -51,18 +51,39 @@ export default function HookSection() {
       style={{ height: "calc(100vh - 36px)", marginTop: "36px" }}
       aria-label="Introduction"
     >
-      {/* Radial gradient overlay */}
+      {/* Radial focus gradient — draws eye to center */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#141414_0%,_#0f0f0f_70%)]" />
+
+      {/* Subtle gold radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,76,0.05)_0%,_transparent_65%)]" />
 
-      {/* Subtle grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Geometric hexagonal pattern (Torah-inspired) */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.03]"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern id="hex-pattern" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
+            <path
+              d="M28 2L54 18V50L28 66L2 50V18Z"
+              fill="none"
+              stroke="#c9a84c"
+              strokeWidth="0.5"
+            />
+            <path
+              d="M28 34L54 50V82L28 98L2 82V50Z"
+              fill="none"
+              stroke="#c9a84c"
+              strokeWidth="0.5"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-pattern)" />
+      </svg>
+
+      {/* Bottom gradient blend into OriginStory */}
+      <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-ge-background-alt" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -102,7 +123,7 @@ export default function HookSection() {
 
       {/* Scroll-down arrow */}
       <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer p-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer p-2 z-10"
         onClick={scrollToOrigin}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
