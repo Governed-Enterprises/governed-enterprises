@@ -1,0 +1,16 @@
+{
+  "name": "Governed Enterprises",
+  "short_name": "GE",
+  "description": "Building generational wealth through Torah-aligned enterprise.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0f0f0f",
+  "background_color": "#0f0f0f",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
