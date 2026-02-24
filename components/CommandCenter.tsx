@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { DIVISIONS, type DivisionCategory } from "@/lib/constants";
+import DivisionCard from "@/components/DivisionCard";
 
 const CATEGORY_ORDER: DivisionCategory[] = [
   "CULTURE",
@@ -74,15 +75,12 @@ export default function CommandCenter() {
                   {divisions.map((division, i) => (
                     <motion.div
                       key={division.id}
-                      className="border border-ge-gold/10 rounded-lg p-6 bg-ge-background-alt min-h-[120px] flex items-center justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: i * 0.1 }}
                       viewport={{ once: true, margin: "-30px" }}
                     >
-                      <span className="text-ge-primary text-sm font-medium">
-                        {division.name}
-                      </span>
+                      <DivisionCard division={division} />
                     </motion.div>
                   ))}
                 </div>
