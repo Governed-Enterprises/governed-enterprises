@@ -7,6 +7,7 @@ function FooterEmblem() {
       className="w-12 h-14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
       <path
         d="M60 4L112 30V85C112 102 90 122 60 136C30 122 8 102 8 85V30L60 4Z"
@@ -36,33 +37,29 @@ function FooterEmblem() {
 
 export default function Footer() {
   return (
-    <footer className="bg-ge-background px-6">
+    <footer className="bg-ge-background px-6" role="contentinfo">
       {/* Gold divider */}
       <div className="w-[60%] mx-auto h-px bg-ge-gold/30" />
 
       <div className="py-12 md:py-16 flex flex-col items-center text-center">
-        {/* Emblem */}
         <FooterEmblem />
 
-        {/* Tagline */}
         <p className="mt-4 text-sm italic text-ge-secondary">
           {SITE_CONTENT.footerTagline}
         </p>
 
-        {/* Founder */}
         <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ge-dim">
           {SITE_CONTENT.footerFounder}
         </p>
 
-        {/* Copyright */}
         <p className="mt-6 text-xs text-ge-dim">
           {SITE_CONTENT.copyright}
         </p>
 
-        {/* Contact */}
         <a
           href="mailto:contact@governedenterprises.com"
           className="mt-2 text-xs text-ge-gold hover:text-ge-gold-bright transition-colors"
+          aria-label="Email Governed Enterprises"
         >
           contact@governedenterprises.com
         </a>

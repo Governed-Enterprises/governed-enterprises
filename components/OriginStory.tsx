@@ -8,7 +8,11 @@ export default function OriginStory() {
   const lastIndex = paragraphs.length - 1;
 
   return (
-    <section id="origin" className="relative bg-ge-background-alt">
+    <section
+      id="origin"
+      className="relative bg-ge-background-alt"
+      aria-label="Origin story"
+    >
       {/* Gradient blend from previous section */}
       <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-ge-background to-transparent" />
 
