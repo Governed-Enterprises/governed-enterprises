@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 
-const AUDIO_SRC = "/audio/governed-ambient.mp3";
+const AUDIO_SRC = "/audio/weightier-matters.mp3";
 const TARGET_VOLUME = 0.15;
 const FADE_DURATION = 500;
 const FADE_STEPS = 20;
@@ -17,18 +17,13 @@ export default function SoundToggle() {
   const fadeRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const audio = new Audio(AUDIO_SRC);
-    audio.loop = true;
-    audio.volume = 0;
-    audio.preload = "none";
-    audio.addEventListener("error", () => setHasError(true));
-    audioRef.current = audio;
-
     return () => {
       if (fadeRef.current) clearInterval(fadeRef.current);
-      audio.pause();
-      audio.removeAttribute("src");
-      audio.load();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.removeAttribute("src");
+        audioRef.current.load();
+      }
     };
   }, []);
 
@@ -58,15 +53,21 @@ export default function SoundToggle() {
   );
 
   const toggle = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio || hasError) return;
+    if (hasError) return;
 
-    if (playing) {
-      fadeVolume(audio.volume, 0, () => {
-        audio.pause();
+    if (playing && audioRef.current) {
+      fadeVolume(audioRef.current.volume, 0, () => {
+        audioRef.current?.pause();
       });
       setPlaying(false);
     } else {
+      if (!audioRef.current) {
+        const audio = new Audio(AUDIO_SRC);
+        audio.loop = true;
+        audio.volume = 0;
+        audioRef.current = audio;
+      }
+      const audio = audioRef.current;
       audio.volume = 0;
       audio
         .play()
@@ -84,7 +85,7 @@ export default function SoundToggle() {
     ? "Audio coming soon"
     : playing
       ? "Pause"
-      : "Listen to GOVERNED";
+      : "Listen to Weightier Matters";
 
   return (
     <div

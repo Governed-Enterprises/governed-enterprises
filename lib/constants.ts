@@ -23,7 +23,7 @@ export const TYPOGRAPHY = {
 // ─── Site Content ───────────────────────────────────────────
 export const SITE_CONTENT = {
   hookStatement: "A man who governs himself can govern anything.",
-  hookSubtext: "Est. 2024 — Eau Claire, Wisconsin",
+  hookSubtext: "Est. 2025 — Eau Claire, Wisconsin",
   originParagraphs: [
     "It started with a realization most men avoid: no one was coming. No institution, no investor, no mentor with a master plan. The systems that were supposed to provide for a family like ours were either broken or never built for us in the first place. So the only option was to build — not one thing, but everything we needed, from the ground up.",
     "The foundation wasn't business theory — it was Torah. The same ancient framework that governed nations, households, and economies for thousands of years became the blueprint. Self-education replaced formal credentials. Discipline replaced motivation. Every skill acquired was a brick laid in a structure that would outlast a single generation.",
@@ -32,12 +32,12 @@ export const SITE_CONTENT = {
   ],
   footerTagline: "An enterprise built for generational inheritance.",
   footerFounder: "Founded by Terry Taylor",
-  copyright: "© 2024 Governed Enterprises. All rights reserved.",
+  copyright: "© 2025 Governed Enterprises. All rights reserved.",
 } as const;
 
 // ─── Ticker Items ───────────────────────────────────────────
 export const TICKER_ITEMS = [
-  { icon: "🎵", text: "GOVERNED album — streaming now on all platforms" },
+  { icon: "🎵", text: "GOVERNED album — coming soon on all platforms" },
   { icon: "📚", text: "The Halakah — enrollment opening soon" },
   { icon: "📈", text: "Governed Trader — in development" },
   { icon: "🌿", text: "Covenant Heritage Farm — land acquisition in progress" },
@@ -66,7 +66,7 @@ export const DIVISIONS: Division[] = [
     category: "CULTURE",
     description: "Brand, media, and the public voice of Governed Enterprises.",
     subdomain: "brand.governedenterprises.com",
-    status: "LIVE",
+    status: "COMING SOON",
     icon: "crown",
     details: [
       "Music, content, and visual identity",
@@ -122,7 +122,7 @@ export const DIVISIONS: Division[] = [
     category: "COMMERCE",
     description: "Rapid prototyping and custom manufacturing for internal and client projects.",
     subdomain: "print.governedenterprises.com",
-    status: "LIVE",
+    status: "IN DEVELOPMENT",
     icon: "box",
     details: [
       "FDM and resin printing capabilities",
@@ -150,7 +150,7 @@ export const DIVISIONS: Division[] = [
     category: "JUSTICE & OPERATIONS",
     description: "Entity structuring, compliance, and legal protection for the enterprise.",
     subdomain: "legal.governedenterprises.com",
-    status: "LIVE",
+    status: "COMING SOON",
     icon: "scale",
     details: [
       "LLC formation and corporate structuring",
@@ -178,7 +178,7 @@ export const DIVISIONS: Division[] = [
     category: "JUSTICE & OPERATIONS",
     description: "Websites, hosting, DevOps, and the technical backbone of the enterprise.",
     subdomain: "infra.governedenterprises.com",
-    status: "LIVE",
+    status: "IN DEVELOPMENT",
     icon: "server",
     details: [
       "Web development and hosting management",
