@@ -19,8 +19,8 @@ export default function OriginStory() {
       {/* Bottom gradient blend into CommandCenter */}
       <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-ge-background" />
 
-      <div className="py-16 md:py-24 px-6">
-        <div className="max-w-[640px] mx-auto">
+      <div className="py-16 md:py-24 px-5 sm:px-6">
+        <div className="w-full sm:max-w-[580px] md:max-w-[640px] mx-auto">
           {/* Thin gold divider line */}
           <motion.div
             className="w-[60%] mx-auto h-px bg-ge-gold/30"
@@ -31,14 +31,14 @@ export default function OriginStory() {
           />
 
           {/* Spacing below line */}
-          <div className="h-12" />
+          <div className="h-10 sm:h-12" />
 
           {/* Paragraphs */}
           {paragraphs.map((paragraph, i) => (
             <motion.p
               key={i}
               className={`text-base md:text-lg leading-relaxed ${
-                i < lastIndex ? "mb-8 text-ge-primary" : "text-ge-gold"
+                i < lastIndex ? "mb-6 sm:mb-8 text-ge-primary" : "text-ge-gold"
               }`}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}

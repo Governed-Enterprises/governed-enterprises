@@ -29,7 +29,6 @@ function groupByCategory() {
 function isHighlighted(status: string, filter: Filter): boolean {
   if (filter === "ALL") return true;
   if (filter === "LIVE") return status === "LIVE";
-  // "COMING SOON" filter shows both COMING SOON and IN DEVELOPMENT
   return status === "COMING SOON" || status === "IN DEVELOPMENT";
 }
 
@@ -40,7 +39,7 @@ export default function CommandCenter() {
   return (
     <section
       id="command-center"
-      className="relative bg-ge-background py-16 md:py-24 px-6"
+      className="relative bg-ge-background py-16 md:py-24 px-4 sm:px-6"
       aria-label="Division command center"
     >
       <div className="max-w-5xl mx-auto">
@@ -65,7 +64,7 @@ export default function CommandCenter() {
         </motion.p>
 
         {/* Filter bar */}
-        <div className="mt-8 flex items-center justify-center gap-6" role="tablist">
+        <div className="mt-6 sm:mt-8 flex items-center justify-center gap-4 sm:gap-6" role="tablist">
           {FILTERS.map((filter) => (
             <button
               key={filter}
@@ -91,7 +90,7 @@ export default function CommandCenter() {
         </div>
 
         {/* Category groups */}
-        <div className="mt-12 space-y-12">
+        <div className="mt-10 sm:mt-12 space-y-10 sm:space-y-12">
           {CATEGORY_ORDER.map((category) => {
             const divisions = groups.get(category);
             if (!divisions || divisions.length === 0) return null;
@@ -100,7 +99,7 @@ export default function CommandCenter() {
               <div key={category}>
                 {/* Category label */}
                 <motion.h3
-                  className="text-sm font-semibold uppercase tracking-wide text-ge-gold text-center md:text-left mb-6"
+                  className="text-sm font-semibold uppercase tracking-wide text-ge-gold text-center md:text-left mb-5 sm:mb-6"
                   initial={{ opacity: 0, x: -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
@@ -110,7 +109,7 @@ export default function CommandCenter() {
                 </motion.h3>
 
                 {/* Division cards grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {divisions.map((division, i) => (
                     <motion.div
                       key={division.id}

@@ -6,7 +6,7 @@ import { Volume2, VolumeX } from "lucide-react";
 
 const AUDIO_SRC = "/audio/governed-ambient.mp3";
 const TARGET_VOLUME = 0.15;
-const FADE_DURATION = 500; // ms
+const FADE_DURATION = 500;
 const FADE_STEPS = 20;
 
 export default function SoundToggle() {
@@ -68,12 +68,15 @@ export default function SoundToggle() {
       setPlaying(false);
     } else {
       audio.volume = 0;
-      audio.play().then(() => {
-        fadeVolume(0, TARGET_VOLUME);
-        setPlaying(true);
-      }).catch(() => {
-        setHasError(true);
-      });
+      audio
+        .play()
+        .then(() => {
+          fadeVolume(0, TARGET_VOLUME);
+          setPlaying(true);
+        })
+        .catch(() => {
+          setHasError(true);
+        });
     }
   }, [playing, hasError, fadeVolume]);
 
@@ -85,7 +88,7 @@ export default function SoundToggle() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-40"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -106,7 +109,7 @@ export default function SoundToggle() {
 
       {/* Button */}
       <motion.button
-        className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer"
+        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center cursor-pointer"
         style={{
           backgroundColor: "#1a1a1a",
           border: "1px solid rgba(201,168,76,0.3)",
@@ -121,9 +124,9 @@ export default function SoundToggle() {
         aria-label={tooltipText}
       >
         {playing ? (
-          <Volume2 className="w-5 h-5 text-ge-gold" />
+          <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-ge-gold" />
         ) : (
-          <VolumeX className="w-5 h-5 text-ge-gold" />
+          <VolumeX className="w-4 h-4 sm:w-5 sm:h-5 text-ge-gold" />
         )}
       </motion.button>
     </div>

@@ -8,7 +8,7 @@ function GEEmblem() {
   return (
     <svg
       viewBox="0 0 120 140"
-      className="w-20 h-[93px] md:w-[120px] md:h-[140px]"
+      className="w-16 h-[75px] sm:w-20 sm:h-[93px] lg:w-[120px] lg:h-[140px]"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -86,10 +86,10 @@ export default function HookSection() {
       <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-ge-background-alt" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl">
+      <div className="relative z-10 text-center px-5 sm:px-6 max-w-4xl">
         {/* Logo */}
         <motion.div
-          className="flex justify-center mb-8"
+          className="flex justify-center mb-6 sm:mb-8"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -112,7 +112,7 @@ export default function HookSection() {
 
         {/* Subtext */}
         <motion.p
-          className="mt-4 text-xs sm:text-sm tracking-[0.15em] uppercase text-ge-gold-muted"
+          className="mt-3 sm:mt-4 text-xs sm:text-sm tracking-[0.15em] uppercase text-ge-gold-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.5 }}
@@ -123,7 +123,7 @@ export default function HookSection() {
 
       {/* Scroll-down arrow */}
       <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer p-2 z-10"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 cursor-pointer p-2 z-10"
         onClick={scrollToOrigin}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
