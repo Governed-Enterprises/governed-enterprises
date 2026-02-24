@@ -9,18 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "var(--color-obsidian)",
-        ivory: "var(--color-ivory)",
+        background: "var(--color-background)",
+        "background-alt": "var(--color-background-alt)",
         gold: "var(--color-gold)",
-        "gold-light": "var(--color-gold-light)",
-        "gold-dark": "var(--color-gold-dark)",
-        crimson: "var(--color-crimson)",
-        steel: "var(--color-steel)",
-        slate: "var(--color-slate)",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        secondary: "var(--text-secondary)",
-        muted: "var(--text-muted)",
+        "gold-muted": "var(--color-gold-muted)",
+        "gold-bright": "var(--color-gold-bright)",
+        foreground: "var(--color-text-primary)",
+        secondary: "var(--color-text-secondary)",
+        muted: "var(--color-text-dim)",
+        "status-live": "var(--color-status-live)",
+        "status-dev": "var(--color-status-dev)",
+        "status-soon": "var(--color-status-soon)",
+        // Legacy aliases
+        obsidian: "var(--color-background)",
+        ivory: "var(--color-text-primary)",
+        steel: "var(--color-background-alt)",
+        slate: "var(--color-background-alt)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "Arial", "Helvetica", "sans-serif"],

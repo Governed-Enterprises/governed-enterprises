@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TICKER_MESSAGES } from "@/lib/constants";
+import { TICKER_ITEMS } from "@/lib/constants";
 
 export default function TopBar() {
-  const tickerText = TICKER_MESSAGES.join("   ·   ");
+  const tickerText = TICKER_ITEMS.map((item) => `${item.icon} ${item.text}`).join("   ·   ");
 
   return (
     <div className="fixed top-0 left-0 right-0 z-40 bg-obsidian/95 backdrop-blur-sm border-b border-gold/20">

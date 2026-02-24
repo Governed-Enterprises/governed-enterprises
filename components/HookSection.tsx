@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { HOOK_CONTENT } from "@/lib/constants";
+import { SITE_CONTENT } from "@/lib/constants";
 
 export default function HookSection() {
   return (
@@ -17,7 +17,7 @@ export default function HookSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {HOOK_CONTENT.headline}
+          {SITE_CONTENT.hookStatement}
         </motion.h1>
 
         <motion.p
@@ -26,16 +26,7 @@ export default function HookSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          {HOOK_CONTENT.subheadline}
-        </motion.p>
-
-        <motion.p
-          className="mt-8 text-base md:text-lg text-secondary max-w-2xl mx-auto leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          {HOOK_CONTENT.description}
+          {SITE_CONTENT.hookSubtext}
         </motion.p>
       </div>
 

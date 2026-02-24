@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ORIGIN_STORY } from "@/lib/constants";
+import { SITE_CONTENT } from "@/lib/constants";
 
 export default function OriginStory() {
   return (
@@ -14,11 +14,11 @@ export default function OriginStory() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          {ORIGIN_STORY.heading}
+          The Origin
         </motion.h2>
 
         <div className="space-y-6">
-          {ORIGIN_STORY.paragraphs.map((paragraph, i) => (
+          {SITE_CONTENT.originParagraphs.map((paragraph, i) => (
             <motion.p
               key={i}
               className="text-base md:text-lg text-secondary leading-relaxed"

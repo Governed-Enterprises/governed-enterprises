@@ -46,7 +46,7 @@ export default function CommandCenter() {
               <h3 className="text-ivory font-semibold mb-1">
                 {division.name}
               </h3>
-              <p className="text-muted text-sm">{division.tagline}</p>
+              <p className="text-muted text-sm">{division.description}</p>
             </motion.div>
           ))}
         </div>
