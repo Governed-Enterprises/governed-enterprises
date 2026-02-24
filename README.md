@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Governed Enterprises
+
+**Building Generational Wealth Through Torah-Aligned Enterprise**
+
+A single-page holding-company site for Governed Enterprises — spanning education, finance, health, agriculture, legal services, AI, and digital infrastructure. Built on Torah principles for generational inheritance.
+
+---
+
+## Tech Stack
+
+| Layer        | Technology                                   |
+| ------------ | -------------------------------------------- |
+| Framework    | Next.js 14 (App Router)                      |
+| Language     | TypeScript                                   |
+| Styling      | Tailwind CSS 4 with `ge-*` design tokens     |
+| Animation    | Framer Motion                                |
+| Icons        | Lucide React                                 |
+| Fonts        | Inter (body) · JetBrains Mono (mono)         |
+| Deployment   | Vercel-ready (static export compatible)      |
+
+## Project Structure
+
+```
+governed-enterprises/
+├── app/
+│   ├── layout.tsx          # Root layout, metadata, JSON-LD, fonts
+│   ├── page.tsx            # Home page assembly
+│   ├── globals.css         # Tailwind base, scrollbar, keyframes
+│   └── favicon.svg         # SVG favicon (gold GE monogram)
+├── components/
+│   ├── TopBar.tsx          # Fixed 36px header with crossfade ticker
+│   ├── HookSection.tsx     # Full-viewport hero with shield emblem
+│   ├── OriginStory.tsx     # Founder narrative with scroll animations
+│   ├── CommandCenter.tsx   # Division grid with category filters
+│   ├── DivisionCard.tsx    # Expandable division cards with status
+│   ├── Footer.tsx          # Site footer (server component)
+│   ├── ScrollProgress.tsx  # Gold progress bar (native scroll)
+│   └── SoundToggle.tsx     # Ambient audio toggle with fade
+├── lib/
+│   └── constants.ts        # All site content, divisions, palette
+├── public/
+│   ├── manifest.json       # PWA manifest
+│   └── robots.txt          # SEO crawl rules
+├── tailwind.config.ts      # Extended theme with ge-* tokens
+└── .env.example            # Environment variable template
+```
+
+## Divisions
+
+| Division                        | Status          | Category            |
+| ------------------------------- | --------------- | ------------------- |
+| The Governed Academy            | LIVE            | Culture             |
+| GE Press                        | In Development  | Culture             |
+| GE Studios                      | In Development  | Culture             |
+| GE Financial                    | In Development  | Commerce            |
+| GE AgriWorks                    | In Development  | Commerce            |
+| GE Health                       | In Development  | Commerce            |
+| GE Legal                        | In Development  | Justice & Ops       |
+| GE Digital                      | In Development  | Justice & Ops       |
+| GE AI Labs                      | In Development  | Justice & Ops       |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and fill in values as needed:
 
-## Learn More
+```bash
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+See `.env.example` for available configuration options.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Background**: `#0f0f0f` (near-black)
+- **Primary text**: `#e0e0e0` (warm white)
+- **Accent / Gold**: `#c9a84c`
+- **Accent hover**: `#d4b95c`
+- **Surface cards**: `#1a1a1a`
+- **Borders**: `#2a2a2a`
 
-## Deploy on Vercel
+All colors are available as `ge-*` Tailwind utilities (e.g., `bg-ge-background`, `text-ge-gold`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accessibility
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Semantic HTML (`header`, `main`, `footer`, ARIA roles)
+- `aria-live="polite"` on ticker for screen readers
+- `prefers-reduced-motion: reduce` disables all animations
+- Keyboard-navigable interactive elements
+- Sufficient color contrast ratios
+
+## Performance
+
+- Fonts loaded via `next/font/google` (zero layout shift)
+- `CommandCenter` lazy-loaded with `next/dynamic`
+- Scroll listener uses `requestAnimationFrame` + `passive: true`
+- Animations use only `transform` and `opacity` (GPU-composited)
+- `will-change` hints on animated elements
+
+## SEO
+
+- Full Open Graph and Twitter Card metadata
+- JSON-LD Organization structured data
+- `robots.txt` with sitemap reference
+- PWA manifest for mobile install
+
+---
+
+**Founded by Terry Taylor · Eau Claire, Wisconsin · 2024**
