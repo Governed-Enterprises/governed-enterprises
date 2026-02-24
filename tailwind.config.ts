@@ -33,9 +33,9 @@ const config: Config = {
         muted: "#555555",
       },
       fontFamily: {
-        heading: ["Montserrat", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        heading: ["var(--font-inter)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       animation: {
         "ticker-scroll": "ticker-scroll 30s linear infinite",
