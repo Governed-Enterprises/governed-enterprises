@@ -23,11 +23,11 @@ export const TYPOGRAPHY = {
 // ─── Site Content ───────────────────────────────────────────
 export const SITE_CONTENT = {
   hookStatement: "Governed Enterprises",
-  hookSubtext: "Building systems that serve people instead of exploiting them.",
+  hookSubtext: "Helping people reclaim authority over their own lives.",
   originParagraphs: [
-    "Governed Enterprises was founded on a simple conviction: the systems people depend on should serve them, not extract from them. What started as one man's refusal to accept broken institutions became a blueprint for building better ones — from the ground up, with no corners cut.",
-    "Every division exists to help people reclaim authority over a specific area of their lives. We started with legal, because that's where people lose the most ground. We're expanding as the mission demands — deliberately, and only when it's real.",
-    "We don't exaggerate what we've built. We don't list what doesn't exist yet. What you see here is what's operational or nearly so. New divisions are added when they're ready — not before.",
+    "The systems people depend on — for justice, for health, for shelter, for survival — were not built to serve them. They were built to extract from them. Governed Enterprises exists to build the alternative. Every subsidiary addresses a specific system that holds people captive, and builds something that actually frees them.",
+    "We remove weight. We clear paths. A man drowning in debt doesn't need a lecture — he needs someone to help him breathe. A family being failed by the system doesn't need to understand the system first — they need a way out. That's what we build.",
+    "The first subsidiary is Plumbline Legal — helping people reclaim authority over their legal standing. Others will follow as they're called into existence. No subsidiary operates outside the standard. No subsidiary exists for its own sake. Everything here is built to serve.",
   ],
   footerTagline: "Established under authority. Built to serve.",
   footerFounder: "Founded by Terry Taylor",

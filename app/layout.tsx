@@ -24,9 +24,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://governedenterprises.com"),
-  title: "Governed Enterprises | Building Systems That Serve People",
+  title: "Governed Enterprises | Reclaim Authority Over Your Life",
   description:
-    "Governed Enterprises is a holding company helping people reclaim authority over their own lives — starting with legal services, expanding as the mission demands.",
+    "Governed Enterprises builds tools, services, and systems that serve people instead of exploiting them — starting with legal, expanding as the mission demands.",
   keywords:
     "Governed Enterprises, Plumbline Legal, Terry Taylor, holding company, legal services",
   icons: {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Governed Enterprises | Building Systems That Serve People",
+    title: "Governed Enterprises | Reclaim Authority Over Your Life",
     description:
-      "A holding company helping people reclaim authority over their own lives — starting with legal services, expanding as the mission demands.",
+      "Governed Enterprises builds tools, services, and systems that serve people instead of exploiting them — starting with legal, expanding as the mission demands.",
     siteName: "Governed Enterprises",
     type: "website",
     url: "https://governedenterprises.com",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Governed Enterprises",
     description:
-      "Building systems that serve people instead of exploiting them.",
+      "Helping people reclaim authority over their own lives.",
     images: ["/og-image.png"],
   },
 };
@@ -64,7 +64,7 @@ const jsonLd = {
   name: "Governed Enterprises",
   url: "https://governedenterprises.com",
   description:
-    "A holding company helping people reclaim authority over their own lives — starting with legal services, expanding as the mission demands.",
+    "Governed Enterprises builds tools, services, and systems that serve people instead of exploiting them — starting with legal, expanding as the mission demands.",
   founder: {
     "@type": "Person",
     name: "Terry Taylor",
