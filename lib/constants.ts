@@ -32,7 +32,7 @@ export const SITE_CONTENT = {
   footerTagline: "Established under authority. Built to serve.",
   footerFounder: "Founded by Terry Taylor",
   footerLocation: "Eau Claire, Wisconsin",
-  copyright: "© 2025 Governed Enterprises. All rights reserved.",
+  copyright: "© 2026 Governed Enterprises. All rights reserved.",
 } as const;
 
 // ─── Ticker Items ───────────────────────────────────────────

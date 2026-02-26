@@ -69,7 +69,7 @@ const jsonLd = {
     "@type": "Person",
     name: "Terry Taylor",
   },
-  foundingDate: "2024",
+  foundingDate: "2026",
   foundingLocation: {
     "@type": "Place",
     address: "Eau Claire, Wisconsin",

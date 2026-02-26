@@ -126,7 +126,7 @@ export default function HookSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.4 }}
         >
-          Est. 2024 · Eau Claire, Wisconsin
+          Est. 2026
         </motion.p>
       </div>
 
