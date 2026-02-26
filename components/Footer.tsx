@@ -49,20 +49,31 @@ export default function Footer() {
         </p>
 
         <p className="mt-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] text-ge-dim">
-          {SITE_CONTENT.footerFounder}
+          {SITE_CONTENT.footerFounder} · {SITE_CONTENT.footerLocation}
         </p>
+
+        {/* Division links */}
+        <div className="mt-4 sm:mt-5 flex items-center gap-4 sm:gap-6">
+          <a
+            href="https://plumbline-legal.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-ge-gold hover:text-ge-gold-bright transition-colors"
+          >
+            Plumbline Legal
+          </a>
+          <span className="text-ge-dim text-xs">·</span>
+          <a
+            href="mailto:contact@governedenterprises.com"
+            className="text-xs text-ge-gold hover:text-ge-gold-bright transition-colors"
+          >
+            Contact
+          </a>
+        </div>
 
         <p className="mt-5 sm:mt-6 text-[10px] sm:text-xs text-ge-dim">
           {SITE_CONTENT.copyright}
         </p>
-
-        <a
-          href="mailto:contact@governedenterprises.com"
-          className="mt-2 text-[10px] sm:text-xs text-ge-gold hover:text-ge-gold-bright transition-colors"
-          aria-label="Email Governed Enterprises"
-        >
-          contact@governedenterprises.com
-        </a>
       </div>
     </footer>
   );

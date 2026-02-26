@@ -5,22 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Division } from "@/lib/constants";
 
 const ICON_MAP: Record<string, string> = {
-  crown: "👑",
-  "book-open": "📖",
-  "trending-up": "📈",
-  leaf: "🌿",
-  box: "📦",
-  sprout: "🌱",
   scale: "⚖️",
-  bot: "🤖",
-  server: "🖥️",
+  music: "🎵",
 };
 
 function StatusBadge({ status }: { status: Division["status"] }) {
   const config = {
     LIVE: { color: "#4ade80", label: "Live", dotClass: "animate-status-pulse" },
-    "IN DEVELOPMENT": { color: "#fbbf24", label: "In Dev", dotClass: "animate-status-pulse-slow" },
-    "COMING SOON": { color: "#666666", label: "Soon", dotClass: "" },
+    "COMING SOON": { color: "#666666", label: "Coming Soon", dotClass: "" },
   }[status];
 
   return (
@@ -73,7 +65,6 @@ function DetailLines({ details, isVisible }: { details: string[]; isVisible: boo
 
 export default function DivisionCard({ division }: { division: Division }) {
   const [expanded, setExpanded] = useState(false);
-  const [toast, setToast] = useState(false);
   const isLive = division.status === "LIVE";
 
   const handleClick = () => {
@@ -81,25 +72,26 @@ export default function DivisionCard({ division }: { division: Division }) {
   };
 
   const handleNavigate = () => {
-    if (isLive) {
-      window.open(`https://${division.subdomain}`, "_blank", "noopener");
-    } else {
-      setToast(true);
-      setTimeout(() => setToast(false), 2500);
+    if (isLive && division.url) {
+      window.open(division.url, "_blank", "noopener");
     }
   };
 
   return (
     <motion.div
-      className="relative rounded-xl p-5 sm:p-6 min-h-[160px] sm:min-h-[180px] cursor-pointer flex flex-col group will-change-transform"
+      className={`relative rounded-xl p-5 sm:p-6 min-h-[180px] sm:min-h-[200px] cursor-pointer flex flex-col group will-change-transform`}
       style={{
         backgroundColor: "#1a1a1a",
-        border: "1px solid #2a2a2a",
+        border: division.flagship
+          ? "1px solid rgba(201,168,76,0.4)"
+          : "1px solid #2a2a2a",
       }}
       whileHover={{
         y: -4,
         borderColor: "rgba(201,168,76,0.4)",
-        boxShadow: "0 4px 20px rgba(201,168,76,0.15)",
+        boxShadow: division.flagship
+          ? "0 4px 24px rgba(201,168,76,0.2)"
+          : "0 4px 20px rgba(201,168,76,0.15)",
         transition: { duration: 0.2, ease: "easeOut" },
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}
@@ -129,8 +121,18 @@ export default function DivisionCard({ division }: { division: Division }) {
         {division.description}
       </p>
 
-      {/* Subdomain */}
-      <p className="mt-2 text-[10px] sm:text-xs text-ge-dim font-mono">{division.subdomain}</p>
+      {/* Link for live divisions */}
+      {isLive && division.url && (
+        <a
+          href={division.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 text-[10px] sm:text-xs text-ge-gold hover:text-ge-gold-bright transition-colors font-mono"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {division.url.replace("https://", "")} ↗
+        </a>
+      )}
 
       {/* Expandable details */}
       <DetailLines details={division.details} isVisible={expanded} />
@@ -141,23 +143,6 @@ export default function DivisionCard({ division }: { division: Division }) {
           Click to expand details
         </p>
       )}
-
-      {/* Toast for non-live divisions */}
-      <AnimatePresence>
-        {toast && (
-          <motion.div
-            className="absolute bottom-3 left-3 right-3 bg-ge-background-alt border border-ge-gold/20 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-center z-10"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.2 }}
-          >
-            <p className="text-[10px] sm:text-xs text-ge-secondary">
-              Coming soon — <span className="text-ge-gold">{division.name}</span> is in development
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 }

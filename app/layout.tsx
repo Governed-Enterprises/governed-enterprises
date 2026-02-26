@@ -24,21 +24,19 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://governedenterprises.com"),
-  title:
-    "Governed Enterprises | Building Generational Wealth Through Torah-Aligned Enterprise",
+  title: "Governed Enterprises | Building Systems That Serve People",
   description:
-    "Governed Enterprises is a holding enterprise spanning education, finance, health, agriculture, legal services, AI, and digital infrastructure — all built on Torah principles for generational inheritance.",
+    "Governed Enterprises is a holding company helping people reclaim authority over their own lives — starting with legal services, expanding as the mission demands.",
   keywords:
-    "Governed Enterprises, Torah business, generational wealth, Terry Taylor, The Governed Man",
+    "Governed Enterprises, Plumbline Legal, Terry Taylor, holding company, legal services",
   icons: {
     icon: "/favicon.svg",
   },
   manifest: "/manifest.json",
   openGraph: {
-    title:
-      "Governed Enterprises | Building Generational Wealth Through Torah-Aligned Enterprise",
+    title: "Governed Enterprises | Building Systems That Serve People",
     description:
-      "Governed Enterprises is a holding enterprise spanning education, finance, health, agriculture, legal services, AI, and digital infrastructure — all built on Torah principles for generational inheritance.",
+      "A holding company helping people reclaim authority over their own lives — starting with legal services, expanding as the mission demands.",
     siteName: "Governed Enterprises",
     type: "website",
     url: "https://governedenterprises.com",
@@ -55,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Governed Enterprises",
     description:
-      "Building generational wealth through Torah-aligned enterprise.",
+      "Building systems that serve people instead of exploiting them.",
     images: ["/og-image.png"],
   },
 };
@@ -66,7 +64,7 @@ const jsonLd = {
   name: "Governed Enterprises",
   url: "https://governedenterprises.com",
   description:
-    "A holding enterprise spanning education, finance, health, agriculture, legal services, AI, and digital infrastructure — built on Torah principles for generational inheritance.",
+    "A holding company helping people reclaim authority over their own lives — starting with legal services, expanding as the mission demands.",
   founder: {
     "@type": "Person",
     name: "Terry Taylor",

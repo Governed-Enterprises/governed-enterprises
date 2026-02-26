@@ -112,12 +112,21 @@ export default function HookSection() {
 
         {/* Subtext */}
         <motion.p
-          className="mt-3 sm:mt-4 text-xs sm:text-sm tracking-[0.15em] uppercase text-ge-gold-muted"
+          className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-ge-secondary max-w-xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.1 }}
         >
           {SITE_CONTENT.hookSubtext}
+        </motion.p>
+
+        <motion.p
+          className="mt-3 text-[10px] sm:text-xs tracking-[0.15em] uppercase text-ge-gold-muted"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1.4 }}
+        >
+          Est. 2024 · Eau Claire, Wisconsin
         </motion.p>
       </div>
 
@@ -127,7 +136,7 @@ export default function HookSection() {
         onClick={scrollToOrigin}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 1.6 }}
+        transition={{ duration: 0.4, delay: 1.9 }}
         aria-label="Scroll to origin story"
       >
         <ChevronDown className="w-6 h-6 text-ge-gold/60 animate-pulse-gentle" />
