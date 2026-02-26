@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Governed Enterprises",
     description:
-      "Helping people reclaim authority over their own lives.",
+      "Helping people reclaim governance over their own lives.",
     images: ["/og-image.png"],
   },
 };

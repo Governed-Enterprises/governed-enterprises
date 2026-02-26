@@ -23,7 +23,7 @@ export const TYPOGRAPHY = {
 // ─── Site Content ───────────────────────────────────────────
 export const SITE_CONTENT = {
   hookStatement: "Governed Enterprises",
-  hookSubtext: "Helping people reclaim authority over their own lives.",
+  hookSubtext: "Helping people reclaim governance over their own lives.",
   originParagraphs: [
     "The systems people depend on — for justice, for health, for shelter, for survival — were not built to serve them. They were built to extract from them. Governed Enterprises exists to build the alternative. Every subsidiary addresses a specific system that holds people captive, and builds something that actually frees them.",
     "We remove weight. We clear paths. A man drowning in debt doesn't need a lecture — he needs someone to help him breathe. A family being failed by the system doesn't need to understand the system first — they need a way out. That's what we build.",
