@@ -38,13 +38,12 @@ export const SITE_CONTENT = {
 // ─── Ticker Items ───────────────────────────────────────────
 export const TICKER_ITEMS = [
   { icon: "⚖️", text: "Plumbline Legal — Now Live" },
-  { icon: "🎵", text: "The Governed Man — Album Available on All Platforms" },
   { icon: "🏛️", text: "Governed Enterprises — Built to Serve" },
 ] as const;
 
 // ─── Division Types ─────────────────────────────────────────
-export type DivisionStatus = "LIVE" | "COMING SOON";
-export type DivisionCategory = "JUSTICE" | "CULTURE";
+export type DivisionStatus = "LIVE";
+export type DivisionCategory = "JUSTICE";
 
 export interface Division {
   id: string;
@@ -74,21 +73,6 @@ export const DIVISIONS: Division[] = [
       "Legal document preparation",
       "Consumer protection services",
       "Empowering people to take control of their legal standing",
-    ],
-  },
-  {
-    id: "ge-music",
-    name: "GE Music",
-    category: "CULTURE",
-    description:
-      "Original music rooted in truth. The Governed Man album available now on all platforms.",
-    url: "",
-    status: "COMING SOON",
-    icon: "music",
-    details: [
-      "The Governed Man album",
-      "Available on all major streaming platforms",
-      "Original music that stands for something",
     ],
   },
 ];

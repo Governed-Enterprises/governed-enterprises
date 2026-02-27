@@ -6,13 +6,11 @@ import type { Division } from "@/lib/constants";
 
 const ICON_MAP: Record<string, string> = {
   scale: "⚖️",
-  music: "🎵",
 };
 
 function StatusBadge({ status }: { status: Division["status"] }) {
   const config = {
     LIVE: { color: "#4ade80", label: "Live", dotClass: "animate-status-pulse" },
-    "COMING SOON": { color: "#666666", label: "Coming Soon", dotClass: "" },
   }[status];
 
   return (

@@ -32,8 +32,8 @@ export default function CommandCenter() {
           The Divisions
         </motion.p>
 
-        {/* Division cards — centered 2-column layout */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-2xl mx-auto">
+        {/* Division card — single centered */}
+        <div className="mt-10 sm:mt-12 max-w-md mx-auto">
           {DIVISIONS.map((division, i) => (
             <motion.div
               key={division.id}
