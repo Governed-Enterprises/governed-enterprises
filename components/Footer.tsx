@@ -49,7 +49,7 @@ export default function Footer() {
         </p>
 
         <p className="mt-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] text-ge-dim">
-          {SITE_CONTENT.footerFounder} · {SITE_CONTENT.footerLocation}
+          {SITE_CONTENT.footerFounder}
         </p>
 
         {/* Division links */}
