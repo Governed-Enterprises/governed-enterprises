@@ -53,6 +53,7 @@ export interface Division {
   url: string;
   status: DivisionStatus;
   icon: string;
+  established: string;
   flagship?: boolean;
   details: string[];
 }
@@ -68,6 +69,7 @@ export const DIVISIONS: Division[] = [
     url: "https://plumbline-legal.com",
     status: "LIVE",
     icon: "scale",
+    established: "2026",
     flagship: true,
     details: [
       "Legal document preparation",

@@ -114,6 +114,11 @@ export default function DivisionCard({ division }: { division: Division }) {
         </p>
       </div>
 
+      {/* Established date */}
+      <p className="mt-2 text-[10px] sm:text-xs text-ge-dim font-mono">
+        Est. {division.established}
+      </p>
+
       {/* Description */}
       <p className="mt-2 sm:mt-3 text-sm text-ge-secondary leading-relaxed">
         {division.description}
